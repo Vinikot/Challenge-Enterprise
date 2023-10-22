@@ -11,13 +11,13 @@ public class Fornecedor {
 
     @Id
     @Column(name = "CNPJ_FORNECEDOR", columnDefinition = "NUMBER(14)")
-    private long cnpj;
+    private Long cnpj;
 
     @Column(name = "NM_FORNECEDOR", columnDefinition = "VARCHAR(50)", nullable = false)
     private String nome;
 
     @Column(name = "TELEFONE_FORNECEDOR", columnDefinition = "NUMBER(11)", nullable = false)
-    private long telefone;
+    private Long telefone;
 
     @Column(name = "REPUTACAO_FORNECEDOR", columnDefinition = "VARCHAR(250)", nullable = false)
     private String reputacao;
@@ -25,18 +25,18 @@ public class Fornecedor {
     public Fornecedor() {
     }
 
-    public Fornecedor(long cnpj, String nome, long telefone, String reputacao) {
+    public Fornecedor(Long cnpj, String nome, Long telefone, String reputacao) {
         this.cnpj = cnpj;
         this.nome = nome;
         this.telefone = telefone;
         this.reputacao = reputacao;
     }
 
-    public long getCnpj() {
+    public Long getCnpj() {
         return cnpj;
     }
 
-    public Fornecedor setCnpj(long cnpj) {
+    public Fornecedor setCnpj(Long cnpj) {
         this.cnpj = cnpj;
         return this;
     }
@@ -50,11 +50,11 @@ public class Fornecedor {
         return this;
     }
 
-    public long getTelefone() {
+    public Long getTelefone() {
         return telefone;
     }
 
-    public Fornecedor setTelefone(long telefone) {
+    public Fornecedor setTelefone(Long telefone) {
         this.telefone = telefone;
         return this;
     }

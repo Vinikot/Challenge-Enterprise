@@ -8,6 +8,12 @@ import java.math.BigDecimal;
 @Table(name = "TB_ITENS_FORNECEDOR")
 public class FornecedorItens {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_ITENS_FORNECEDOR")
+    @SequenceGenerator( name = "SQ_ITENS_FORNECEDOR", sequenceName = "SQ_ITENS_FORNECEDOR", allocationSize = 1, initialValue = 1)
+    @Column(name = "ID_ITENS_FORNECEDOR")
+    private int id;
+
     @Column(name = "QUANTIDADE_ITENS_FORNECEDOR", columnDefinition = "NUMBER(11,2)")
     private BigDecimal quantidade;
 
@@ -26,7 +32,7 @@ public class FornecedorItens {
     @JoinColumn(
             name = "ITENS",
             referencedColumnName = "ID_ITENS",
-            foreignKey = @ForeignKey(name = "FK_ID_ITENS")
+            foreignKey = @ForeignKey(name = "FK_ID_ITENS_F")
     )
     private Itens itens;
 

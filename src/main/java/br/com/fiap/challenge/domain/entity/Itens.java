@@ -3,7 +3,7 @@ package br.com.fiap.challenge.domain.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "TB_ITENS")
 public class Itens {
 
     @Id

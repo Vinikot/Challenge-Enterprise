@@ -13,7 +13,7 @@ public class Compra {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_COMPRA")
     @SequenceGenerator( name = "SQ_COMPRA", sequenceName = "SQ_COMPRA", allocationSize = 1, initialValue = 1)
     @Column(name = "ID_COMPRA")
-    private long id;
+    private Long id;
 
     @Column(name = "COD_CONTRATO_COMPRA", columnDefinition = "VARCHAR(50)")
     private String codContrato;
@@ -35,7 +35,7 @@ public class Compra {
     public Compra() {
     }
 
-    public Compra(long id, String codContrato, LocalDate dataCompra, BigDecimal valorTotal, Usuario usuario) {
+    public Compra(Long id, String codContrato, LocalDate dataCompra, BigDecimal valorTotal, Usuario usuario) {
         this.id = id;
         this.codContrato = codContrato;
         this.dataCompra = dataCompra;
@@ -43,11 +43,11 @@ public class Compra {
         this.usuario = usuario;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public Compra setId(long id) {
+    public Compra setId(Long id) {
         this.id = id;
         return this;
     }

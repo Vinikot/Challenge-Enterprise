@@ -10,7 +10,7 @@ public class Usuario {
 
     @Id
     @Column(name = "CPF_USUARIO", columnDefinition = "NUMBER(11)")
-    private long cpf;
+    private Long cpf;
 
     @Column(name = "NM_USUARIO", columnDefinition = "VARCHAR(50)", nullable = false)
     private String nome;
@@ -22,7 +22,7 @@ public class Usuario {
     private String senha;
 
     @Column(name = "CEP_ENTREGA_USUARIO", columnDefinition = "NUMBER(8)", nullable = false)
-    private long cepEntrega;
+    private Long cepEntrega;
 
     @Column(name = "LOGRADOURO_USUARIO", columnDefinition = "VARCHAR(50)", nullable = false)
     private String logradouro;
@@ -34,12 +34,12 @@ public class Usuario {
     private String complemento;
 
     @Column(name = "TELEFONE_USUARIO", columnDefinition = "NUMBER(11)", nullable = false)
-    private long telefone;
+    private Long telefone;
 
     public Usuario() {
     }
 
-    public Usuario(long cpf, String nome, String email, String senha, long cepEntrega, String logradouro, int numLogradouro, String complemento, long telefone) {
+    public Usuario(Long cpf, String nome, String email, String senha, Long cepEntrega, String logradouro, int numLogradouro, String complemento, Long telefone) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;
@@ -51,11 +51,11 @@ public class Usuario {
         this.telefone = telefone;
     }
 
-    public long getCpf() {
+    public Long getCpf() {
         return cpf;
     }
 
-    public Usuario setCpf(long cpf) {
+    public Usuario setCpf(Long cpf) {
         this.cpf = cpf;
         return this;
     }
@@ -87,11 +87,11 @@ public class Usuario {
         return this;
     }
 
-    public long getCepEntrega() {
+    public Long getCepEntrega() {
         return cepEntrega;
     }
 
-    public Usuario setCepEntrega(long cepEntrega) {
+    public Usuario setCepEntrega(Long cepEntrega) {
         this.cepEntrega = cepEntrega;
         return this;
     }
@@ -123,11 +123,11 @@ public class Usuario {
         return this;
     }
 
-    public long getTelefone() {
+    public Long getTelefone() {
         return telefone;
     }
 
-    public Usuario setTelefone(long telefone) {
+    public Usuario setTelefone(Long telefone) {
         this.telefone = telefone;
         return this;
     }
