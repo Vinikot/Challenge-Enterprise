@@ -8,7 +8,7 @@ public class TipoDeItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_TIPO_ITEM")
-    @SequenceGenerator( name = "SQ_TIPO_ITEM", sequenceName = "SQ_TIPO_ITEM", allocationSize = 1, initialValue = 1)
+    @SequenceGenerator( name = "SQ_TIPO_ITEM", sequenceName = "SQ_TIPO_ITEM", allocationSize = 1)
     @Column(name = "ID_TIPO_ITEM")
     private Long id;
 

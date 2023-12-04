@@ -1,6 +1,7 @@
 package br.com.fiap.challenge.domain.repository;
 
 import br.com.fiap.challenge.domain.entity.Telefone;
+import br.com.fiap.challenge.domain.entity.TipoDeItem;
 import br.com.fiap.challenge.infra.security.entity.Pessoa;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -34,18 +35,21 @@ public class TelefoneRepository implements Repository<Telefone, Long> {
 
     @Override
     public List<Telefone> findAll() {
-        return null;
+        return manager.createQuery("FROM Telefone", Telefone.class).getResultList();
     }
 
     @Override
     public Telefone findById(Long id) {
-        return null;
+        return manager.find(Telefone.class, id);
     }
 
 
     @Override
     public Telefone persist(Telefone telefone) {
-        return null;
+        manager.getTransaction().begin();
+        manager.persist(telefone);
+        manager.getTransaction().commit();
+        return telefone;
     }
 
     @Override

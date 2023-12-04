@@ -4,6 +4,8 @@ import br.com.fiap.challenge.Main;
 import br.com.fiap.challenge.domain.entity.Telefone;
 import br.com.fiap.challenge.domain.repository.TelefoneRepository;
 import br.com.fiap.challenge.infra.database.EntityManagerFactoryProvider;
+import br.com.fiap.challenge.infra.security.service.PessoaFisicaService;
+import br.com.fiap.challenge.infra.security.service.PessoaJuridicaService;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
@@ -37,6 +39,9 @@ public class TelefoneService implements Service<Telefone, Long> {
         }
         return result;
     }
+
+    private PessoaFisicaService pfService = PessoaFisicaService.of( Main.PERSISTENCE_UNIT );
+    private PessoaJuridicaService pjService = PessoaJuridicaService.of( Main.PERSISTENCE_UNIT );
 
     @Override
     public List<Telefone> findAll() {
